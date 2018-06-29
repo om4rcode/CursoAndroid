@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "932482256800",
+    "firebase_url": "https://order-foods-8ff93.firebaseio.com",
+    "project_id": "order-foods-8ff93",
+    "storage_bucket": "order-foods-8ff93.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:932482256800:android:2f27f3dd36c1d70a",
+        "android_client_info": {
+          "package_name": "cevichito.omarcode.com.cevichito"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "932482256800-rq8ei5lg2ubjfkn8020kh6j7poakoa7f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "cevichito.omarcode.com.cevichito",
+            "certificate_hash": "cfc9b8dbac3323bf5e515d1807e7e4d0aaac3abd"
+          }
+        },
+        {
+          "client_id": "932482256800-712pn8ioa1fvmqpek65gfoqs7e476o4a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDcipH-xPjxaDVoQyNCK9pq6bAFKB6SCIc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "932482256800-712pn8ioa1fvmqpek65gfoqs7e476o4a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
