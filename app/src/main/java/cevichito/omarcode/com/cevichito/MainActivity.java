@@ -8,10 +8,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import cevichito.omarcode.com.cevichito.preferences.Session;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     Button _btnSignUp, _btnSignIn;
-
+    Session session;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,7 +21,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         setUp();
 
-        // Buttons
+        // Botones
         _btnSignUp.setOnClickListener(this);
         _btnSignIn.setOnClickListener(this);
     }
@@ -38,7 +40,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void setUp() {
+         session = Session.get(this);
         _btnSignIn = (Button)findViewById(R.id.btnSignIn);
         _btnSignUp = (Button)findViewById(R.id.btnSignUp);
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        if(session.isLoggedIn()) {
+            Intent homeIntent = new Intent(MainActivity.this, Home.class);
+            //Common.currentUser = user;
+            startActivity(homeIntent);
+            finish();
+        }
     }
 }

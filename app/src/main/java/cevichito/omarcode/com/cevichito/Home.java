@@ -27,7 +27,9 @@ import com.squareup.picasso.Picasso;
 import cevichito.omarcode.com.cevichito.Common.Common;
 import cevichito.omarcode.com.cevichito.Interface.ItemClickListener;
 import cevichito.omarcode.com.cevichito.Modelo.Category;
+import cevichito.omarcode.com.cevichito.Modelo.User;
 import cevichito.omarcode.com.cevichito.ViewHolder.MenuViewHolder;
+import cevichito.omarcode.com.cevichito.preferences.Session;
 
 public class Home extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -46,6 +48,8 @@ public class Home extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle("Menu");
         setSupportActionBar(toolbar);
+
+        Session s = Session.get(this);
 
         //Iniciamos Firebase.
         database = FirebaseDatabase.getInstance();
@@ -70,10 +74,11 @@ public class Home extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        User user = s.getUser();
         //set name for user
         View headerView = navigationView.getHeaderView(0);
         _tvfullname = headerView.findViewById(R.id.tvFullName);
-        _tvfullname.setText(Common.currentUser.getName());
+        _tvfullname.setText(user.getName());
 
         recycler_menu = findViewById(R.id.recycler_menu);
         recycler_menu.setHasFixedSize(true);
@@ -151,7 +156,10 @@ public class Home extends AppCompatActivity
         } else if (id == R.id.nav_pedidos) {
 
         } else if (id == R.id.nav_salir) {
-
+            Session session = Session.get(this);
+            session.logOut();
+            startActivity(new Intent(Home.this, Login.class));
+            finish();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

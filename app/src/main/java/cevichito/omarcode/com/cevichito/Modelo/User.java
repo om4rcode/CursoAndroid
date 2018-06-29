@@ -2,9 +2,10 @@ package cevichito.omarcode.com.cevichito.Modelo;
 
 public class User {
 
-    // los variables deben de ser iguales a las de la DB.
+    // los nombres de las variables deben de ser iguales a las de la DB.
     private String Name;
     private String Password;
+    private String Email;
 
     public User() {
     }
@@ -28,5 +29,13 @@ public class User {
 
     public void setPassword(String password) {
         this.Password = password;
+    }
+
+    public String getEmail() {
+        return Email;
+    }
+
+    public void setEmail(String email) {
+        Email = email;
     }
 }
